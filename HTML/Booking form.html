@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>LUNAR LODGE</title>
+<link rel="stylesheet" href="../CSS/LUNAR%20LODGE.css" type="text/css">
+<script src="../JS/bookingForm.js" defer></script>
+</head>
+
+<body onload=calculateTotal()>
+    <div class="header" id="stickyHeader">
+        <div id="rectangle">
+            <a href="../Index.html">
+                <img src="../IMAGES/LOGO.PNG" alt="logo" id="logo">
+            </a>
+        </div>
+
+        <div id="topbar">
+            <a class="buttonLink" href="../Index.html">
+                <div class="button">
+                    HOME
+                </div>
+            </a>
+
+            <a class="buttonLink" href="Booking%20form.html">
+                <div class="button">
+                    BOOKING
+                </div>
+            </a>
+
+            <div id="linksInDropdown">
+                <div class="dropdown">
+                    <a class="buttonLink" href="Rooms.html">
+                    <div class="button">ROOMS</div>
+                    </a>
+                        <div class="dropdown-content">
+                            <a href="Rooms.html#room1">Studio</a>
+                            <a href="Rooms.html#room2">1 Bedroom</a>
+                            <a href="Rooms.html#room3">2 Bedroom</a>
+                        </div>
+                    </div>
+            </div>
+
+            <a class="buttonLink" href="Contact%20Us.html">
+                <div class="button">
+                    CONTACT US
+                </div>
+
+            </a>
+
+            <a class="buttonLink" href="Things%20To%20Do.html">
+                <div class="button">
+                    TO DO
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--banner on the top page-->
+    <div class="blackRectangle">
+        <h3 class="bookText">BOOK A ROOM</h3>
+        <p style="text-align: center;">PLEASE ENTER YOUR DETAILS BELOW</p>
+    </div>
+
+    <!--form-->
+    <form name="form1" method="POST">
+        <div class="form">
+
+            <fieldset>
+                <legend>
+                    Your Details
+                </legend>
+
+                <div class="grid">
+                    <label for="title">Preffered Title: </label>
+                    <select id="title">
+							<option value="Mr" selected> Mr. </option>
+							<option value="Mrs"> Mrs. </option>
+							<option value="Miss"> Miss. </option>
+							<option value="Dr"> Dr. </option>
+                    </select>
+                    <span></span>
+
+                    <label for="fName">First Name:</label>
+                    <input required type="text" name="fname" id="fName" placeholder="First Name" onchange=validateFName() oninvalid="this.setCustomValidity('')">
+                    <span></span>
+
+                    <label for="lName">Last Name:</label>
+                    <input required type="text" name="lname" id="lName" placeholder="Last Name" onchange=validateLName()>
+                    <span></span>
+
+                    <label for="Email"> Email: </label>
+                    <input type="email" id="Email" placeholder="example@something.com">
+                    <span></span>
+
+                    <label for="contact"> Contact: </label>
+                    <input type="tel" id="contact" placeholder="0299999999">
+                    <span></span>
+                </div>
+            </fieldset>
+            <br>
+            <br>
+            <br>
+
+            <fieldset>
+                <legend>
+                    Info
+                </legend>
+                <div class="grid">
+                    <label for="roomType"> Type of Room: </label>
+                    <select id="roomType" onchange=calculateTotal()>
+							<option value="1" selected> Studio </option>
+							<option value="2"> 1 Bedroom </option>
+							<option value="3"> 2 Bedroom </option>
+						</select>
+                    <span></span>
+
+                    <label for="no-Room"> Number of Rooms: </label>
+                    <select id="no-Room" onchange=calculateTotal()>
+							<option value="1" selected> 1 </option>
+							<option value="2"> 2 </option>
+							<option value="3"> 3 </option>
+							<option value="4"> 4 </option>
+							<option value="5"> 5 </option>
+						</select>
+                    <span></span>
+
+                    <label for="adults"> How Many Adults: </label>
+                    <select id="adults" onchange=calculateTotal()>
+							<option value="1" selected> 1 </option>
+							<option value="2"> 2 </option>
+							<option value="3"> 3 </option>
+							<option value="4"> 4 </option>
+							<option value="5"> 5 </option>
+							<option value="6"> 6 </option>
+							<option value="7"> 7 </option>
+							<option value="8"> 8 </option>
+							<option value="9"> 9 </option>
+							<option value="10"> 10 </option>
+
+						</select>
+                    <span></span>
+
+                    <label for="children"> How Many Children: </label>
+                    <select id="children" onchange=calculateTotal()>
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+							<option value="2"> 2 </option>
+							<option value="3"> 3 </option>
+							<option value="4"> 4 </option>
+							<option value="5"> 5 </option>
+							<option value="6"> 6 </option>
+							<option value="7"> 7 </option>
+							<option value="8"> 8 </option>
+							<option value="9"> 9 </option>
+							<option value="10"> 10 </option>
+
+						</select>
+                    <span></span>
+
+                    <label for="checkIn"> Check In date </label>
+                    <input type="date" id="checkIn" onchange=calculateTotal()>
+                    <span></span>
+
+                    <label for="checkOut"> Check Out date </label>
+                    <input type="date" name="checkOut" id="checkOut" onchange=calculateTotal()>
+                    <span></span>
+
+                    <label for="checkInTime"> Check In Time </label>
+                    <div>
+                        <input type="time" id="checkInTime" class="hide">
+                    </div>
+                    <span></span>
+
+                    <label for="breakFast"> Breakfast </label>
+                    <div>
+                        <input type="checkbox" id="breakFast" onclick=calculateTotal()>
+                    </div>
+                    <span></span>
+                </div>
+
+            </fieldset>
+
+
+
+
+
+        </div>
+
+        <div class="blackRectangle">
+            <div class="centreText">
+                YOUR TOTAL IS:
+                <p id="finalTotal"> </p>
+            </div>
+        </div>
+
+        <div id="centreButtons">
+            <input type="submit" value="Done!" onclick=validateAllnames()>
+            <input type="reset" value="Clear!">
+        </div>
+
+    </form>
+
+
+    <!--display final total-->
+    
+
+    <!--fubmit and reset buttons-->
+
+
+
+    <footer id="footer">
+        <div style="padding-top: 40px;">
+            @COPYRIGHT INFORMATION 2020
+        </div>
+    </footer>
+
+</body>
+
+</html>
